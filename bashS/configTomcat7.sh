@@ -61,9 +61,8 @@ echo "making script"
 touch /etc/systemd/system/tomcat7.service
 
 sudo chmod 744 /etc/systemd/system/tomcat7.service
-fil = /etc/systemd/system/tomcat7.service
 
-cat > $fil  <<EOF
+cat > /etc/systemd/system/tomcat7.service  <<EOF
 
 [Unit]
 Description=StarExec Apache Tomcat 7 Servlet Container
@@ -92,8 +91,7 @@ echo "creating tomcat7 setenv.sh"
 
 sudo touch /project/apache-tomcat-7/bin/setenv.sh
 
-file = /project/apache-tomcat-7/bin/setenv.sh
-cat > $file << EOF
+cat > /project/apache-tomcat-7/bin/setenv.sh << EOF
 
 export SGE_ROOT="/cluster/gridengine-8.1.9-2"
 export SGE_CELL="default"
@@ -122,9 +120,7 @@ echo "configuring tomcat manager-gui user"
 
 sudo touch /project/apache-tomcat-7/conf/tomcat-users.xml
 
-tusers = /project/apache-tomcat-7/conf/tomcat-users.xml
-
-cat > $tusers << EOF
+cat > /project/apache-tomcat-7/conf/tomcat-users.xml  << EOF
 
 <user username="tomcat" password="TA-passwd" roles="manager-gui"/>
 

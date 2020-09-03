@@ -17,9 +17,7 @@ sudo chown -R tomcat:star-web /project/apache-tomcat-7
 
 sudo touch /cluster/scripts/setup_users.sh
 
-sufile = /cluster/scripts/setup_users.sh
-
-cat > $sufile << EOF
+cat > /cluster/scripts/setup_users.sh << EOF
 
 #!/bin/bash
 # Create star-web group
