@@ -1,3 +1,16 @@
+tomcat ALL=(sgeadmin) NOPASSWD: ALL
+
+# Pedro 2018/10/29 - Debug, allow tomcat to run all commands as sandbox and sandbox2
+tomcat ALL=(sandbox) NOPASSWD: ALL
+tomcat ALL=(sandbox2) NOPASSWD: ALL
+
+Defaults    env_keep += "SGE_ROOT SGE_CELL SGE_CLUSTER_NAME SGE_QMASTER_PORT SGE_EXECD_PORT"
+Defaults    secure_path = /sbin:/bin:/usr/sbin:/usr/bin:/cluster/gridengine-8.1.9-2/bin:/cluster/gridengine-8.1.9-2/bin/lx-amd64:/opt/xcat/bin:/opt/xcat/sbin:/opt/xcat/share/xcat/tools:/cluster/gridengine-8.1.9-2/bin:/cluster/gridengine-8.1.9-2/bin/lx-amd64
+
+##
+## Iowa Sudoers entries, our directories have been updated to match Iowa
+##
+
 Defaults    env_reset
 Defaults    env_keep = "COLORS DISPLAY HOSTNAME HISTSIZE INPUTRC KDEDIR \
                         LS_COLORS MAIL PS1 PS2 QTDIR USERNAME \
@@ -6,19 +19,15 @@ Defaults    env_keep = "COLORS DISPLAY HOSTNAME HISTSIZE INPUTRC KDEDIR \
                         LC_PAPER LC_TELEPHONE LC_TIME LC_ALL LANGUAGE LINGUAS \
                         _XKB_CHARSET XAUTHORITY"
 Defaults    env_keep += "SGE_ROOT SGE_CELL SGE_CLUSTER_NAME SGE_QMASTER_PORT SGE_EXECD_PORT"
-
 Cmnd_Alias SANDBOXCHOWN = /bin/chown -R sandbox /export/starexec/sandbox, \
                           /bin/chown -R tomcat /export/starexec/sandbox, \
                           /bin/chown -R tomcat /export/starexec/sandbox/benchmark, \
                           /bin/chown tomcat /export/starexec/sandbox
-
 Cmnd_Alias SANDBOXCHOWN2 = /bin/chown -R sandbox2 /export/starexec/sandbox2, \
                            /bin/chown -R tomcat /export/starexec/sandbox2, \
                            /bin/chown -R tomcat /export/starexec/sandbox2/benchmark, \
                            /bin/chown tomcat /export/starexec/sandbox2
 
-#Host_Alias NODES = n*.star.cs.uiowa.edu
-#Host_Alias CLUSTER = localhost, starexec[123].star.cs.uiowa.edu, n*.star.cs.uiowa.edu
 Host_Alias NODES = n*.cluster.edu
 Host_Alias CLUSTER = localhost, n*.cluster.edu
 
@@ -29,3 +38,5 @@ tomcat NODES=NOPASSWD:SANDBOXCHOWN2
 
 Cmnd_Alias SGECMDS = /cluster/gridengine-8.1.9-2/bin/lx24-amd64/qconf, /cluster/gridengine-8.1.9-2/bin/lx24-amd64/qmod
 tomcat CLUSTER=(sgeadmin) NOPASSWD:SGECMDS
+
+echo "$update" | (EDITOR="tee -a" visudo)
