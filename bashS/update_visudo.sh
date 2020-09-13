@@ -1,3 +1,5 @@
+#!/bin/bash
+
 tomcat ALL=(sgeadmin) NOPASSWD: ALL
 
 # Pedro 2018/10/29 - Debug, allow tomcat to run all commands as sandbox and sandbox2

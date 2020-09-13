@@ -6,12 +6,6 @@
 
 echo "unzipping tomcat7 from starexec repo clone"
 
-#creates user tomcat
-
-echo "creating user tomcat"
-
-sudo adduser tomcat
-
 #makes project folder and installs tomcat on it
 
 echo "making directory for project"
@@ -120,11 +114,7 @@ echo "configuring tomcat manager-gui user"
 
 sudo touch /project/apache-tomcat-7/conf/tomcat-users.xml
 
-cat > /project/apache-tomcat-7/conf/tomcat-users.xml  << EOF
-
-<user username="tomcat" password="TA-passwd" roles="manager-gui"/>
-
-EOF 
+echo '<user username="tomcat" password="TA-passwd" roles="manager-gui"/>' >> /project/apache-tomcat-7/conf/tomcat-users.xml 
 
 echo "go to /project/apache-tomcat-7/conf/tomcat-users.xml for username and password for tomcat"
 

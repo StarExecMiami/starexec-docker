@@ -1,14 +1,6 @@
-
 #!/bin/bash
 
-echo "TYPE THESE IN WHEN PROMPTED
+mysql -u root -p -e "CREATE DATABASE starexec; GRANT ALL PRIVILEGES ON starexec.* TO 'se_admin'@'localhost' IDENTIFIED BY 'dfsdf34RFerfg3TFGRfrF3edFVg12few2'; FLUSH PRIVILEGES;"
 
-DROP DATABASE starexec;
-CREATE DATABASE starexec;
-GRANT ALL PRIVILEGES ON starexec.* TO  'tomcat'@'localhost' IDENTIFIED BY '--your password here';
-FLUSH PRIVILEGES;
-exit
-"
-
-mysql -u root -p
+echo "made starexec database"
 
