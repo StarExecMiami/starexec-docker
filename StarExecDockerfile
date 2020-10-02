@@ -2,15 +2,15 @@ FROM centos:7
 
 # below is an ordered list of how to execute bashes
 
-# JavaJdk.sh
+# JavaJdk.sh //tested
 
-# AntInstall.sh
+# AntInstall.sh //tested
 
-# SassInstall.sh
+# SassInstall.sh //tested (installs nodejs as well)
 
-# setupUsers.sh
+# setupUsers.sh // tested
 
-# CloneStarexecRepo.sh
+# CloneStarexecRepo.sh //tested
 
 # configTomcat7.sh
 
