@@ -85,23 +85,7 @@ echo "creating tomcat7 setenv.sh"
 
 sudo touch /project/apache-tomcat-7/bin/setenv.sh
 
-cat > /project/apache-tomcat-7/bin/setenv.sh << EOF
-
-export SGE_ROOT="/cluster/gridengine-8.1.9-2"
-export SGE_CELL="default"
-
-export SGE_ARCH="lx-amd64"
-export SGE_CLUSTER_NAME="se"
-
-if [ -e $SGE_ROOT/$SGE_CELL ]
-  then
-    . $SGE_ROOT/$SGE_CELL/common/settings.sh
-fi
-
-export LD_LIBRARY_PATH=$SGE_ROOT/lib/$ARCH:$SGE_ROOT/lib/$ARCH/lx-amd64:$LD_LIBRARY_PATH
-export DRMAA_LIBRARY_PATH=$SGE_ROOT/lib/$ARCH/lx-amd64
-
-EOF
+cat setenv.txt > /project/apache-tomcat-7/bin/setenv.sh
 
 sudo chown tomcat:tomcat /project/apache-tomcat-7/bin/setenv.sh
 
