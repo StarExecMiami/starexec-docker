@@ -12,9 +12,9 @@ FROM centos:7
 
 # CloneStarexecRepo.sh //tested
 
-# configTomcat7.sh
+# configTomcat7.sh //tested
 
-# MariaDbconfig.sh
+# MariaDbconfig.sh //tested
 
 # setupOverrides.sh
 
