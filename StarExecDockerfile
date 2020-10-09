@@ -16,16 +16,14 @@ FROM centos:7
 
 # MariaDbconfig.sh //tested
 
-# setupOverrides.sh
+# setupOverrides.sh //tested
 
-# CreateDB.sh
+# CreateDB.sh // tested
 
-# setupAccounts.sh
+# setupAccounts.sh //problem
 
-# UpdateSudoRules.sh
+# UpdateSudoRules.sh // tested
 
-# update_visudo.sh
-
-# DeployApp.sh --STILL NEEDS TO BE CREATED
+# DeployApp.sh //problems
 
 #done
