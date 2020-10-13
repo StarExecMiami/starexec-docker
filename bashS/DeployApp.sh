@@ -8,6 +8,7 @@
 cd ~starexec/StarExec-deploy/sql && mysql -u root starexec < NewInstall.sql
 
 
-cd ~starexec/StarExec-deploy && ant build -buildfile build.xml reload-sql update-sql
+cd ~starexec/StarExec-deploy && ant build -buildfile build.xml reload-sql update-sql && ~starexec/StarExec-deploy/script/soft-deploy.sh
+
 
 echo "done"
