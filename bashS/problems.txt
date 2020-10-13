@@ -1,0 +1,1 @@
+# create symlink from starexec/StarExec-deploy/WebContent/css/shared to  starexec/StarExec-deploy/WebContent/css/details perhaps after cloning?

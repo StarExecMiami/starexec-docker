@@ -12,6 +12,6 @@ sudo yum install nodejs
 
 echo "Done, Now installing sass"
 
-npm install sass 
+npm install -g  sass 
 
 echo "Done"
