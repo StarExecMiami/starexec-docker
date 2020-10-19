@@ -3,7 +3,9 @@
 
 su - starexec -c  "git clone -- https://github.com/StarExec/StarExec.git StarExec-deploy"
 
-#adds machine 
+cd ~starexec/StarExec-deploy/WebContent/css/details && sudo ln -s ../shared
+
+#adds machineSpecs.txt 
 
 touch ~starexec/StarExec-deploy/build/Cluster.MachineSpecs.txt
 
