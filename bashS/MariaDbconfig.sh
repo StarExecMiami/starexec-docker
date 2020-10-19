@@ -4,7 +4,7 @@
 
 echo "Installing mariadb"
 
-sudo yum install mariadb mariadb-server
+sudo yum install -y mariadb mariadb-server
 
 sudo systemctl start mariadb
 
