@@ -85,6 +85,10 @@ echo "creating tomcat7 setenv.sh"
 
 sudo touch /project/apache-tomcat-7/bin/setenv.sh
 
+cd ../
+
+pwd
+
 cat setenv.txt > /project/apache-tomcat-7/bin/setenv.sh
 
 sudo chown tomcat:tomcat /project/apache-tomcat-7/bin/setenv.sh
@@ -104,13 +108,15 @@ echo "go to /project/apache-tomcat-7/conf/tomcat-users.xml for username and pass
 
 #start tomcat7 
 
-echo "starting tomcat7 instance"
+#echo "starting tomcat7 instance"
 
-sudo systemctl start tomcat7
+#sudo systemctl start tomcat7
 
-sudo systemctl status tomcat7
+#sudo systemctl status tomcat7
 
-echo "tomcat 7 started"
+#/project/apache-tomcat-7/bin/catalina.sh start
+
+#echo "tomcat 7 started"
 
 
 echo "Done configuring tomcat7"
