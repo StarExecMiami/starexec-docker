@@ -1,9 +1,11 @@
 FROM centos:7
 
+ENV LANG=en_US.UTF-8
+
 MAINTAINER Abdullah Zahid <mxz460@miami.edu>
 
 RUN yum -y update && yum -y upgrade
-RUN yum install -y sudo git wget unzip
+RUN yum install -y sudo git wget unzip file
 
 ADD ./bashS ./
 
@@ -29,9 +31,15 @@ RUN bash setupAccounts.sh
 
 RUN bash UpdateSudoRules.sh
 
-#RUN bash DeployApp.sh
+ADD ./start.sh ./
 
-CMD /usr/bin/mysqld_safe --basedir=/usr; bash /DeployApp.sh ; /project/apache-tomcat-7/bin/catalina.sh run  
+RUN rm -rf /var/lib/mysql/*
+
+RUN usr/libexec/mariadb-prepare-db-dir mariadb.service
+
+CMD  bash /start.sh
+
+
 
 EXPOSE 8080
 
