@@ -1,27 +1,17 @@
 #!/bin/bash
 
-#rm -rf /var/lib/mysql/*
+#RUNS AT DOCKER RUN TIME AND IS RESPONSIBLE FOR SOFT DEPLOY
 
-#usr/libexec/mariadb-prepare-db-dir mariadb.service
-
+#starts mysql server
 /usr/bin/mysqld_safe --basedir=/usr &
 
+#starts tomcat server
 /project/apache-tomcat-7/bin/catalina.sh run & 
 
-sleep 10
+sleep 10 #to give some time for servers to start up
 
-sudo mysql -u root -e "DROP DATABASE IF EXISTS starexec; CREATE DATABASE starexec; GRANT ALL PRIVILEGES ON starexec.* TO 'se_admin'@'localhost' IDENTIFIED BY 'dfsdf34RFerfg3TFGRfrF3edFVg12few2'; FLUSH PRIVILEGES;"
+cd ~starexec/StarExec-deploy
 
-#echo "newinstall.sql"
-
-#mysql - u root starexec < NewInstall.sql
-
-bash /DeployApp.sh
-bash ./DeployApp.sh
-
-echo "SUCCESS!!! GO TO YOUR BROWSER AND TYPE IN: localhost:portNumber"
-
-echo "username: admin"
-echo "password: admin"
+script/soft-deploy.sh && printf "SUCCESS!!! GO TO YOUR BROWSER AND TYPE IN: localhost:portNumber \nusername: admin \npassword: admin"
 
 sleep infinity

@@ -5,6 +5,7 @@ ENV LANG=en_US.UTF-8
 MAINTAINER Abdullah Zahid <mxz460@miami.edu>
 
 RUN yum -y update && yum -y upgrade
+
 RUN yum install -y sudo git wget unzip file
 
 ADD ./bashS ./
@@ -31,16 +32,15 @@ RUN bash setupAccounts.sh
 
 RUN bash UpdateSudoRules.sh
 
-ADD ./start.sh ./
-
 RUN rm -rf /var/lib/mysql/*
 
 RUN usr/libexec/mariadb-prepare-db-dir mariadb.service
 
-CMD  bash /start.sh
+ADD ./start.sh ./
+ADD ./deploy.sh ./
 
-
-
+RUN bash ./deploy.sh
+ 
 EXPOSE 8080
 
-
+CMD bash start.sh
