@@ -16,9 +16,9 @@ This will build the image from the Dockerfile.
 
 Once done, type in:
 
-	"docker run -it -v ~/abs/path/to/starexec-docker/volumes/volDB:/var/lib/mysql \
-			-v ~/abs/path/to/starexec-docker/volumes/volStar:/volumeData/starexec \
-			-v ~/abs/path/to/starexec-docker/volumes/volPro:/volumeData/project \
-			-v ~/abs/path/to/starexec-docker/volumes/volSandbox:/volumeData/sandbox \
+	"docker run -it -v volDB:/var/lib/mysql \
+			-v volStar:/volumeData/starexec \
+			-v volPro:/volumeData/project \
+			-v volSandbox:/volumeData/sandbox \
 			-p 7777:8080 starexec "
 
