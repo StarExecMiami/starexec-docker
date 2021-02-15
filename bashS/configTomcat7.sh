@@ -22,6 +22,8 @@ sudo ln -s /project/apache-tomcat-7.0.64 /project/apache-tomcat-7
 
 sudo chown -R tomcat:tomcat /project/apache-tomcat-7.0.64
 
+#sudo chown -R tomcat:star-web /project/apache-tomcat-7.0.64
+
 echo "Done unzipping"
 
 #downloads latest tomcat 7 distribution
@@ -38,9 +40,9 @@ sudo cp /project/apache-tomcat-7.0.64/lib/drmaa.jar /project/apache-tomcat-7.0.9
 
 sudo cp /project/apache-tomcat-7.0.64/lib/mysql-connector-java-5.1.22-bin.jar /project/apache-tomcat-7.0.94/lib/
 
-sudo chown -R tomcat:tomcat /project/apache-tomcat-7.0.94
-
 ln -s /project/apache-tomcat-7.0.94 /project/apache-tomcat-7
+
+sudo chown -R tomcat:tomcat /project/apache-tomcat-7.0.94
 
 chmod 744 /project/apache-tomcat-7/bin/*.sh
 
