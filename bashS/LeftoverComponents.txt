@@ -1,3 +1,0 @@
-
-
-procedure for deploying app
