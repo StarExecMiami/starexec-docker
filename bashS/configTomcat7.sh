@@ -100,13 +100,13 @@ echo "Done making setenv.sh"
 
 # configures tomcat manager-gui user
 
-echo "configuring tomcat manager-gui user"
+#echo "configuring tomcat manager-gui user"
 
-sudo touch /project/apache-tomcat-7/conf/tomcat-users.xml
+#sudo touch /project/apache-tomcat-7/conf/tomcat-users.xml
 
-echo '<user username="tomcat" password="TA-passwd" roles="manager-gui"/>' >> /project/apache-tomcat-7/conf/tomcat-users.xml 
+#echo '<user username="tomcat" password="TA-passwd" roles="manager-gui"/>' >> /project/apache-tomcat-7/conf/tomcat-users.xml 
 
-echo "go to /project/apache-tomcat-7/conf/tomcat-users.xml for username and password for tomcat"
+#echo "go to /project/apache-tomcat-7/conf/tomcat-users.xml for username and password for tomcat"
 
 #start tomcat7 
 
