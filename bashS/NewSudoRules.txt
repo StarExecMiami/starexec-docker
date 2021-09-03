@@ -19,8 +19,8 @@ Cmnd_Alias SANDBOXCHOWN2 = /bin/chown -R sandbox2 /export/starexec/sandbox2, \
 
 #Host_Alias NODES = n*.star.cs.uiowa.edu
 #Host_Alias CLUSTER = localhost, starexec[123].star.cs.uiowa.edu, n*.star.cs.uiowa.edu
-Host_Alias NODES = n*.cluster.edu
-Host_Alias CLUSTER = localhost, n*.cluster.edu
+Host_Alias NODES = localhost
+Host_Alias CLUSTER = localhost
 
 tomcat CLUSTER=(sandbox) NOPASSWD: ALL
 tomcat NODES=NOPASSWD:SANDBOXCHOWN
@@ -29,3 +29,6 @@ tomcat NODES=NOPASSWD:SANDBOXCHOWN2
 
 Cmnd_Alias SGECMDS = /cluster/gridengine-8.1.9-2/bin/lx24-amd64/qconf, /cluster/gridengine-8.1.9-2/bin/lx24-amd64/qmod
 tomcat CLUSTER=(sgeadmin) NOPASSWD:SGECMDS
+
+tomcat ALL=(sandbox) NOPASSWD: ALL
+tomcat ALL=(sandbox2) NOPASSWD: ALL

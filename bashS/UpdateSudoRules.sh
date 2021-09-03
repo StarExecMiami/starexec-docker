@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "updating sudo rules using visudo command"
+#echo "updating sudo rules using visudo command"
 
 
 

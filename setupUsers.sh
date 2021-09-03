@@ -42,4 +42,4 @@ usermod -aG star-web starexec
 # Add starexec account to tomcat grp
 usermod -aG tomcat starexec
 
-
+usermod -aG sandbox tomcat
