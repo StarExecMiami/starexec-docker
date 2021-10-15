@@ -6,23 +6,36 @@ MAINTAINER Abdullah Zahid <mxz460@miami.edu>
 
 RUN yum -y update && yum -y upgrade
 
-RUN yum install -y sudo git wget unzip file
+RUN yum install -y sudo git wget unzip file httpd mod_ssl
 
-ADD ./bashS ./
-
-#RUN adduser starexec 
-
-#RUN adduser tomcat
+ADD ./dependencies ./
 
 RUN bash JavaJdk.sh 
 
 RUN bash AntInstall.sh 
 
-RUN bash SassInstall.sh 
+RUN bash SassInstall.sh
+
+RUN wget --no-check-certificate https://www.openssl.org/source/openssl-1.0.2g.tar.gz -O - | tar -xz
+
+RUN cd ./openssl-1.0.2g && ./config --prefix=/usr/local/openssl --openssldir=/usr/local/openssl && pwd && ls -la /bin/make && /bin/make install && cd ../ 
 
 RUN useradd starexec
 
+ADD ./createSSLforLocalHost.sh ./
+
+RUN bash createSSLforLocalHost.sh
+
+ADD ./configFiles/starexec.conf /etc/httpd/sites-enabled/
+
+ADD ./configFiles/ssl.conf /etc/httpd/conf.d/
+
+ADD ./bashS ./
+
 ADD ./setupUsers.sh ./
+
+RUN /usr/sbin/httpd
+
 RUN bash setupUsers.sh
 
 RUN bash CloneStarexecRepo.sh
@@ -44,6 +57,7 @@ ADD ./deploy.sh ./
 
 RUN bash ./deploy.sh
  
-EXPOSE 8080
+EXPOSE 80
+EXPOSE 443
 
 CMD bash start.sh

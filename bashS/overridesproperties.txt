@@ -16,7 +16,7 @@ Backend.Type: local
 # Host running the database; the compute nodes will connect to this host
 # to report back as job pairs finish.
 #Cluster.DB.Url: db.example.com
-Cluster.DB.Url: starexec.ccs.miami.edu
+Cluster.DB.Url: localhost
 
 # If desired, a user with fewer permissions may be used by the compute nodes to 
 # report results to the database. This user only needs EXECUTE permission, and

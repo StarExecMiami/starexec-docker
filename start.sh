@@ -2,6 +2,10 @@
 
 #RUNS AT DOCKER RUN TIME AND IS RESPONSIBLE FOR SOFT DEPLOY
 
+#start apache2 server
+
+sudo apachectl -k restart
+
 #starts mysql server
 /usr/bin/mysqld_safe --basedir=/usr --user=mysql &
 
