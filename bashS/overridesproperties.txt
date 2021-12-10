@@ -57,7 +57,7 @@ JobPair.MaxFileWrite: 600
 JobPair.ExecutionPrefix: scl enable devtoolset-7 --
 
 # Domain name for the web interface of your copy of StarExec
-Web.Address: starexec.ccs.miami.edu
+Web.Address: localhost
 
 # Path to a custom logo that will be used on website
 # Must be a 300x70 PNG image
@@ -79,11 +79,11 @@ ALLOW_TESTING: true
 # commenting them out while we wait on support from Iowa.
 #
 # New fields to overwrite default
-Proxy.Address: starexec.ccs.miami.edu
+Proxy.Address: localhost
 Proxy.Port: 80
 Proxy.Scheme: http://
 Proxy.URL: ${Proxy.Scheme}${Proxy.Address}
-Report.Host: starexec.ccs.miami.edu
+Report.Host: localhost
 
 # sandbox directory for doing processing and building on the head node
 sandbox_dir: /local/sandbox

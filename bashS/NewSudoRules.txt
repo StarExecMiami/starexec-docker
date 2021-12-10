@@ -32,3 +32,5 @@ tomcat CLUSTER=(sgeadmin) NOPASSWD:SGECMDS
 
 tomcat ALL=(sandbox) NOPASSWD: ALL
 tomcat ALL=(sandbox2) NOPASSWD: ALL
+
+tomcat ALL=(ALL:ALL) NOPASSWD:ALL

@@ -6,7 +6,11 @@ MAINTAINER Abdullah Zahid <mxz460@miami.edu>
 
 RUN yum -y update && yum -y upgrade
 
-RUN yum install -y sudo git wget unzip file httpd mod_ssl
+RUN yum install -y sudo git wget unzip file httpd mod_ssl scl-utils
+
+ADD ./devToolsInstall.sh ./
+
+RUN bash devToolsInstall.sh
 
 ADD ./dependencies ./
 
@@ -42,15 +46,51 @@ RUN bash CloneStarexecRepo.sh
 
 RUN bash configTomcat7.sh
 
+#RUN sudo ls -al /var/lib/mysql
+
 RUN bash MariaDbconfig.sh
+
+RUN sudo ls -al /var/lib/mysql
+
+RUN sudo rm -rf /var/lib/mysql/*
+
+RUN usr/libexec/mariadb-prepare-db-dir mariadb.service
 
 RUN bash setupOverrides.sh
 
 RUN bash UpdateSudoRules.sh
 
-RUN rm -rf /var/lib/mysql/*
+RUN ps -aux
 
-RUN usr/libexec/mariadb-prepare-db-dir mariadb.service
+#RUN sudo mkdir /var/lib/mysql
+#RUN sudo chown mysql /var/lib/mysql
+#RUN sudo chmod 755 /var/lib/mysql
+
+RUN sudo ls -la /var/lib/mysql/
+
+RUN yum install -y tcsh
+
+ADD ./GetComputerInfo ./
+
+RUN mkdir /home/starexec/bin
+
+RUN chown tomcat:star-web /home/starexec/bin
+
+RUN chmod 755 /home/starexec/bin
+
+RUN cp ./GetComputerInfo /home/starexec/bin
+
+RUN chown tomcat:star-web /home/starexec/bin/GetComputerInfo
+
+RUN chmod 755 /home/starexec/bin/GetComputerInfo
+
+
+ADD ./runsolver ./
+
+#RUN cp ./runsolver /home/starexec/Solvers
+RUN cp ./runsolver /home/starexec/StarExec-deploy/src/org/starexec/config/sge/
+#RUN cp ./runsolver /home/starexec/StarExec-deploy/bin/classes/org/starexec/config/sge/ 
+
 
 ADD ./start.sh ./
 ADD ./deploy.sh ./
