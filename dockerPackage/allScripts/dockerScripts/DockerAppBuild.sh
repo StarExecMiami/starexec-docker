@@ -20,4 +20,4 @@ mkdir volumeData && cd volumeData
 ln -s ../home/starexec && ln -s ../project/ && ln -s ../local/sandbox
 cd ..
 
-bash ./DeployApp.sh
+bash allScripts/starexecScripts/AntBuildDeploy.sh

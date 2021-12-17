@@ -15,4 +15,10 @@ sudo ln -s /etc/systemd/system/multi-user.target.wants/mariadb.service /usr/lib/
 
 mysql -u root --version
 
+#configures mariadb db directory
+sudo ls -al /var/lib/mysql
+sudo rm -rf /var/lib/mysql/*
+
+usr/libexec/mariadb-prepare-db-dir mariadb.service
+
 echo "Done installing MariaDB"

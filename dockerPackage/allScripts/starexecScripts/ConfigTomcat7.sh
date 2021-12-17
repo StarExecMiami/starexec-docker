@@ -22,8 +22,6 @@ sudo ln -s /project/apache-tomcat-7.0.64 /project/apache-tomcat-7
 
 sudo chown -R tomcat:tomcat /project/apache-tomcat-7.0.64
 
-#sudo chown -R tomcat:star-web /project/apache-tomcat-7.0.64
-
 echo "Done unzipping"
 
 #downloads latest tomcat 7 distribution
@@ -91,36 +89,10 @@ cd ../
 
 pwd
 
-cat setenv.txt > /project/apache-tomcat-7/bin/setenv.sh
+cat /allScripts/starexecScripts/setenv.txt > /project/apache-tomcat-7/bin/setenv.sh
 
 sudo chown tomcat:tomcat /project/apache-tomcat-7/bin/setenv.sh
 
 echo "Done making setenv.sh"
 
-
-# configures tomcat manager-gui user
-
-#echo "configuring tomcat manager-gui user"
-
-#sudo touch /project/apache-tomcat-7/conf/tomcat-users.xml
-
-#echo '<user username="tomcat" password="TA-passwd" roles="manager-gui"/>' >> /project/apache-tomcat-7/conf/tomcat-users.xml 
-
-#echo "go to /project/apache-tomcat-7/conf/tomcat-users.xml for username and password for tomcat"
-
-#start tomcat7 
-
-#echo "starting tomcat7 instance"
-
-#sudo systemctl start tomcat7
-
-#sudo systemctl status tomcat7
-
-#/project/apache-tomcat-7/bin/catalina.sh start
-
-#echo "tomcat 7 started"
-
-
 echo "Done configuring tomcat7"
-
-

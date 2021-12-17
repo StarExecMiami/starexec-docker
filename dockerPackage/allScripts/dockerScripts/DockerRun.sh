@@ -4,7 +4,7 @@
 
 #start apache2 server
 
-sudo apachectl -k restart
+/usr/sbin/httpd
 
 #starts mysql server
 /usr/bin/mysqld_safe --basedir=/usr --user=mysql &
