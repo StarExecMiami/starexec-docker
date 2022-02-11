@@ -20,5 +20,5 @@ Once done, type in:
 			-v volStar:/volumeData/starexec \
 			-v volPro:/volumeData/project \
 			-v volSandbox:/volumeData/sandbox \
-			-p 7777:8080 starexec "
+			-p 80:80 -p 443:443 starexec "
 
