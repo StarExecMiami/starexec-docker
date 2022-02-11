@@ -17,8 +17,8 @@ This will build the image from the Dockerfile.
 Once done, type in:
 
 	"docker run -it -v volDB:/var/lib/mysql \
-			-v volStar:/volumeData/starexec \
-			-v volPro:/volumeData/project \
-			-v volSandbox:/volumeData/sandbox \
+			-v volStar:/home/starexec \
+			-v volPro:/project \
+			-v volSandbox:/home/sandbox \
 			-p 80:80 -p 443:443 starexec "
 
