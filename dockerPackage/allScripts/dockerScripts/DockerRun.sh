@@ -2,6 +2,12 @@
 
 #RUNS AT DOCKER RUN TIME AND IS RESPONSIBLE FOR SOFT DEPLOY
 
+
+chown -R tomcat:star-web ~/project
+chown -R tomcat:star-web /home/starexec
+chown -R tomcat:star-web /home/sandbox
+chown -R mysql:mysql /var/lib/mysql
+
 #start apache2 server
 
 /usr/sbin/httpd
@@ -10,7 +16,7 @@
 /usr/bin/mysqld_safe --basedir=/usr --user=mysql &
 
 #starts tomcat server
-su -c "/project/apache-tomcat-7/bin/catalina.sh run &" tomcat
+/project/apache-tomcat-7/bin/catalina.sh run &
 
 sleep 10 #to give some time for servers to start up
 
