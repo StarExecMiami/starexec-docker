@@ -10,15 +10,17 @@ To run, first make sure you have docker installed on your system.
 In the CLI, first navigate to the cloned starexec-docker folder.
 Start the docker daemon and then type in:
 
-	"docker build -t starexec . "
+	"podman build -t starexec . "
 
 This will build the image from the Dockerfile.
 
 Once done, type in:
 
-	"docker run -it -v volDB:/var/lib/mysql \
+	"podman run -it -v volDB:/var/lib/mysql \
 			-v volStar:/home/starexec \
 			-v volPro:/project \
 			-v volSandbox:/home/sandbox \
-			-p 80:80 -p 443:443 starexec "
+			-p 8080:8080 starexec "
 
+In browser localhost:8080:8080
+admin admin
