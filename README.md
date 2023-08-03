@@ -22,5 +22,5 @@ Once done, type in:
 			-v volSandbox:/home/sandbox \
 			-p 8080:8080 starexec "
 
-In browser localhost:8080:8080
+In browser http://localhost:8080/starexec
 admin admin
