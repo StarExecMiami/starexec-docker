@@ -1,4 +1,6 @@
 #!/bin/bash
+set -e
+set -o pipefail
 
 
 su - starexec  -c  "git clone -b AZ --single-branch https://github.com/jackeown/StarExec.git StarExec-deploy"

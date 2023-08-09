@@ -1,4 +1,6 @@
 #!/bin/bash
+set -e
+set -o pipefail
 
 sudo mkdir /scratch/projects/exempt/starexec/data_dir
 

@@ -1,4 +1,6 @@
 #!/bin/bash
+set -e
+set -o pipefail
 
 yum -y update && yum -y upgrade
 

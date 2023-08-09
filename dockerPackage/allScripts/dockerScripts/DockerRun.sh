@@ -1,9 +1,10 @@
 #!/bin/bash
+set -e
+set -o pipefail
 
 #RUNS AT DOCKER RUN TIME AND IS RESPONSIBLE FOR SOFT DEPLOY
 
-
-chown -R tomcat:star-web ~/project
+chown -R tomcat:star-web /project
 chown -R tomcat:star-web /home/starexec
 chown -R tomcat:star-web /home/sandbox
 chown -R mysql:mysql /var/lib/mysql

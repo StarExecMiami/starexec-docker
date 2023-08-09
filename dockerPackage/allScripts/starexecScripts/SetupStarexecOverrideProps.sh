@@ -1,4 +1,6 @@
 #!/bin/bash
+set -e
+set -o pipefail
 
 
 sudo touch  ~starexec/StarExec-deploy/build/overrides.properties

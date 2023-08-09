@@ -1,4 +1,6 @@
 #!/bin/bash
+set -e
+set -o pipefail
 
 /usr/local/openssl/bin/openssl req -x509 -out localhost.crt -keyout localhost.key \
 	  -newkey rsa:2048 -nodes -sha256 \

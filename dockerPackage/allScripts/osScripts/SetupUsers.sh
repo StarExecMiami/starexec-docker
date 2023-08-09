@@ -1,4 +1,6 @@
 #!/bin/bash
+set -e
+set -o pipefail
 
 #create star-web group
 sudo su -c "groupadd -g 160 star-web"

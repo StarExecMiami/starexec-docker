@@ -1,9 +1,11 @@
 #!/bin/bash
+set -e
+set -o pipefail
 
 sudo mysql -u root -e "DROP DATABASE starexec; CREATE DATABASE starexec; GRANT ALL PRIVILEGES ON starexec.* TO 'se_admin'@'localhost' IDENTIFIED BY 'dfsdf34RFerfg3TFGRfrF3edFVg12few2'; FLUSH PRIVILEGES;"
 
 
-cd ~starexec/StarExec-deploy/sql && mysql -u root starexec < NewInstall.sql
+cd ~starexec/StarExec-deploy/sql && mysql -u root starexec < NewInstall.sql || true
 
 
 cd ~starexec/StarExec-deploy

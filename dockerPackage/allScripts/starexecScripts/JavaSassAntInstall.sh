@@ -1,4 +1,6 @@
 #!/bin/bash
+set -e
+set -o pipefail
 
 #installs java-1.8.0
 

@@ -1,4 +1,6 @@
 #!/bin/bash
+set -e
+set -o pipefail
 
 #this script configures all of tomcat7 application manager for starexec
 
