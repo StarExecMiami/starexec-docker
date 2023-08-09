@@ -8,6 +8,7 @@ chown -R tomcat:star-web /project
 chown -R tomcat:star-web /home/starexec
 chown -R tomcat:star-web /home/sandbox
 chown -R mysql:mysql /var/lib/mysql
+chmod 755 -R /home/starexec
 
 #start apache2 server
 
