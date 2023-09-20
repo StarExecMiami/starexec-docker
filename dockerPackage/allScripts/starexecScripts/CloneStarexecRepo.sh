@@ -2,8 +2,7 @@
 set -e
 set -o pipefail
 
-
-su - starexec  -c  "git clone -b AZ --single-branch https://github.com/jackeown/StarExec.git StarExec-deploy"
+su - starexec  -c  "git clone -b UMprod --single-branch https://github.com/StarexecMiami/StarExec.git StarExec-deploy"
 
 chown -R tomcat:star-web /home/starexec
 
