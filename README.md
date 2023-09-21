@@ -30,4 +30,12 @@ In your browser, visit http://localhost/starexec
 Default username: admin
 Default password: admin
 
+On Geoff's Mac:
+
+cd .../starexec-docker
+podman machine start
+# One time ... 
+podman build -t starexec .
+podman run -it -v volDB:/var/lib/mysql -v volStar:/home/starexec -v volPro:/project -v volSandbox:/home/sandbox -p 8080:8080 starexec
+# -p 80:80 -p 443:443 gives an error that I still have to fix
 
