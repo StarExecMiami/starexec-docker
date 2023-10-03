@@ -32,10 +32,18 @@ Default password: admin
 
 On Geoff's Mac:
 
-cd .../starexec-docker
+cd starexec-docker
+# If VM not running ...
 podman machine start
 # One time ... 
 podman build -t starexec .
+# Every time
 podman run -it -v volDB:/var/lib/mysql -v volStar:/home/starexec -v volPro:/project -v volSandbox:/home/sandbox -p 8080:8080 starexec
 # -p 80:80 -p 443:443 gives an error that I still have to fix
 
+# Starting and stopping microk8s
+microk8s start 
+microk8s stop
+
+# About microk8s on Mac ... https://microk8s.io/docs/install-macos
+# More tutorials:  https://ubuntu.com/tutorials?q=microk8s
