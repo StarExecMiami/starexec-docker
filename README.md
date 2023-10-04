@@ -30,8 +30,12 @@ In your browser, visit http://localhost/starexec
 Default username: admin
 Default password: admin
 
-On Geoff's Mac:
+David's Wiki
+https://github.com/davfuenmayor/tptp-utilities/wiki
 
+On Geoff's Mac:
+---------------
+# Running StarExec in Podman
 cd starexec-docker
 # If VM not running ...
 podman machine start
@@ -46,4 +50,5 @@ microk8s start
 microk8s stop
 
 # About microk8s on Mac ... https://microk8s.io/docs/install-macos
+# First tutorial ... https://microk8s.io/docs/getting-started
 # More tutorials:  https://ubuntu.com/tutorials?q=microk8s
