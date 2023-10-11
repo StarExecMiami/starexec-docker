@@ -64,7 +64,7 @@ microk8s-vm   Ready    <none>   24h   v1.27.5
 microk8s kubectl get services
 alias kubectl 'microk8s kubectl'
 microk8s kubectl create deployment nginx --image=nginx
-# That worked. What is nginx??
+# That worked. What is nginx?? It's a web service for load balancing
 microk8s kubectl get pods
 microk8s enable dns
 microk8s enable hostpath-storage
@@ -80,3 +80,6 @@ microk8s dashboard-proxy
 #----To stop the nginx
 kubectl scale deployment nginx --replicas=0
 
+
+#----Trying to do what David did
+# edited servces.yaml
